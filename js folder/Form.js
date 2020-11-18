@@ -1,6 +1,7 @@
 class Form {
   constructor() {
-    this.button = createButton('Click to see all blackpink songs');
+    this.button = createButton('Click to see all Blackpink songs');
+    this.button1 = createButton('Click to know more about Blackpink');
     this.title = createElement('h1');
     this.description = createElement('p');
     this.description1 = createElement('p');
@@ -12,6 +13,7 @@ class Form {
     this.title.style('fontSize:xx-large');
     
     this.button.position(displayWidth/2 - 100, displayHeight/2);
+    this.button1.position(displayWidth/2 - 110, displayHeight/2 + 100);
 
     this.description.html("In this site, you can see the links to all the blackpink songs MVs, Dance practice/Dance performance and Audios.");
     this.description.position(displayWidth/2 - 400, 200);
@@ -22,11 +24,23 @@ class Form {
 
     this.button.mousePressed(()=>{
       this.button.hide();
+      this.button1.hide();
       this.title.hide();
       this.description.hide();
       this.description1.hide();
       gameState = 1;
       console.log(gameState);
     });
+
+    this.button1.mousePressed(()=>{
+      this.button1.hide();
+      this.button.hide();
+      this.title.hide();
+      this.description.hide();
+      this.description1.hide();
+      gameState = 2;
+      console.log(gameState);
+    });
+
   }
 }
